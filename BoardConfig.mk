@@ -93,6 +93,11 @@ TARGET_USES_64_BIT_BINDER := true             # 如果设备是32位，则删除
 
 # Metadata
 BOARD_USES_METADATA_PARTITION := true
+TW_CRYPTO_FS_TYPE := f2fs
+TW_CRYPTO_REAL_BLKDEV := "/dev/block/platform/bootdevice/by-name/userdata"
+TW_CRYPTO_MNT_POINT := "/data"
+TW_CRYPTO_FS_OPTIONS := "noatime,nosuid,nodev,noauto_da_alloc,discard,errors=panic"
+TARGET_SYSTEM_PROP := $(DEVICE_PATH)/system.prop
 
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
@@ -133,6 +138,7 @@ PLATFORM_VERSION := 16.1.0
 RECOVERY_SDCARD_ON_DATA := true
 TW_INCLUDE_CRYPTO := true
 TW_INCLUDE_CRYPTO_FBE := true
+TW_INCLUDE_FBE := true
 TW_INCLUDE_FBE_METADATA_DECRYPT := true
 TW_INCLUDE_RESETPROP := true
 TW_INCLUDE_LIBRESETPROP := true
