@@ -62,7 +62,7 @@ jobs:
       
     - name: Clone device tree
       run: |
-        git clone https://github.com/dabao1955/twrp_device_oppo_reno6pro -b oss-T/twrp-12.1 ./device/oppo/pepm00
+        git clone https://github.com/oppo-mt6893-source/twrp_device_oppo_PEPM00 -b oss-T/twrp-12.1 ./device/oppo/pepm00
       working-directory: workspace
 
     - name: Sync Device Dependencies
