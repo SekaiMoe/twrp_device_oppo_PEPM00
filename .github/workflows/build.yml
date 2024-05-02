@@ -59,16 +59,8 @@ jobs:
     - name: Clone device tree
       uses: actions/checkout@v4
       with:
-        path: ./device/oppo/pepm00
-        working-directory: workspace
-
-    - name: Sync Device Dependencies
-      run: |
-        bash ${GITHUB_WORKSPACE}/.github/scripts/convert.sh device/oppo/pepm00/twrp.dependencies
-        python3 /usr/bin/repo sync -j$(nproc --all)
-      working-directory: workspace
-      continue-on-error: true
-
+        path: ./workspace/device/oppo/pepm00
+        
     - name: Set Swap Space
       uses: pierotofy/set-swap-space@master
       with:
