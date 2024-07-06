@@ -12,6 +12,14 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from ossi device
 $(call inherit-product, device/oppo/pepm00/device.mk)
 
+# Enable project quotas and casefolding for emulated storage without sdcardfs
+$(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
+
+# Inherit some common Omni stuff.
+$(call inherit-product, vendor/twrp/config/common.mk)
+
 PRODUCT_DEVICE := pepm00
 PRODUCT_NAME := omni_pepm00
 PRODUCT_BRAND := OPPO
