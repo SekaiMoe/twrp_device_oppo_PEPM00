@@ -70,7 +70,7 @@ jobs:
       run: |
         source build/envsetup.sh
         export ALLOW_MISSING_DEPENDENCIES=true
-        lunch omni_pepm00-eng && make clean && make recoveryimage -j$(nproc --all)
+        lunch omni_pepm00-eng && make clean -j$(nproc --all) V=1 VERBOSE=1 && make recoveryimage -j$(nproc --all) V=1 VERBOSE=1
         sudo chmod 777 -R out/* 
       working-directory: workspace
 
