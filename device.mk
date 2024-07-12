@@ -23,7 +23,8 @@ TARGET_RECOVERY_DEVICE_MODULES += \
     libdrm \
     libion \
     libpcrecpp \
-    libxml2
+    libxml2 \
+    tzdata
 
 # Fastboot
 PRODUCT_PACKAGES += \
@@ -37,3 +38,9 @@ PRODUCT_PACKAGES += \
     update_engine \
     update_engine_sideload \
     update_verifier
+
+TW_RECOVERY_ADDITIONAL_RELINK_LIBRARY_FILES += \
+    $(TARGET_OUT_SHARED_LIBRARIES)/android.hidl.base@1.0.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libcap.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libion.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libxml2.so
